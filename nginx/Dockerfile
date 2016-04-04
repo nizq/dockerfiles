@@ -1,0 +1,7 @@
+FROM alpine:latest
+
+RUN apk --update add git gcc libc-dev gnupg pcre-dev openssl-dev make linux-headers \
+    && addgroup -S nginx \
+	&& adduser -D -S -h /var/cache/nginx -s /sbin/nologin -G nginx nginx
+
+VOLUME ["/source"]

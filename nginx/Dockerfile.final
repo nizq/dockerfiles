@@ -1,0 +1,11 @@
+FROM alpine:latest
+
+ADD nginx-bin.tar.gz /
+
+RUN apk --update add pcre \
+    && addgroup -S nginx \
+	&& adduser -D -S -h /var/cache/nginx -s /sbin/nologin -G nginx nginx \
+	&& ln -sf /dev/stdout /var/log/nginx/access.log \
+	&& ln -sf /dev/stderr /var/log/nginx/error.log
+
+

@@ -58,6 +58,8 @@ cd nginx-${NGINX_VERSION}
 	--group=nginx \
     --add-module=../naxsi-${NAXSI_VERSION}/naxsi_src/
 make
+rm -rf $DIST_PATH
+mkdir -p $DIST_PATH
 DESTDIR=$DIST_PATH make install
 
 rm -f ${FINAL_PATH}/*

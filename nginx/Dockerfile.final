@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.4
 
 ADD nginx-bin.tar.gz /
 

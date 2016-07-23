@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.4
 
 RUN apk --update add ca-certificates wget git gcc libc-dev gnupg pcre-dev openssl-dev make linux-headers \
     && addgroup -S nginx \
